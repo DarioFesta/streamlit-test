@@ -218,11 +218,12 @@ def data_info(combined_csv_files):
         list_of_parameters = st.sidebar.multiselect(label = "Parameters to plot", options = param_names)
         st.sidebar.title("Time object found")
         time_option = st.sidebar.checkbox(f"{column_name_time[0]}")
+        return  list_of_parameters, time_option, column_name_time
         #time_parameters = st.sidebar.multiselect(label = "Time object for x-axis", options = column_name_time)
     else:
         st.sidebar.title("List of Parameters")
         list_of_parameters = st.sidebar.multiselect(label = "Parameters to plot", options = param_names)
-    return  list_of_parameters, time_option, column_name_time
+        return  list_of_parameters, None, None
 
 
 st.set_page_config(page_title=" Curtiss-Wright Data Analysis App",page_icon="CW.png")
