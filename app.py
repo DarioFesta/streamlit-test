@@ -43,7 +43,7 @@ def load_multiple_bin_files_horizontally(uploaded_bin_files):
         bytes_data = file_bin.read()
         param_name = file_bin.name[:-4] # excldue .bin from the name
         # lld =   LONG (4 bytes for time in seconds) + LONG(4 bytes for nanoseconds) + DOUBLE (8 bytes for parameter value)
-        dt = np.dtype( [('time(s)', 'l'), ('time(ns)', 'l'), (param_name, 'd') ])
+        dt = np.dtype( [('time(s)', 'I'), ('time(ns)', 'I'), (param_name, 'd') ])
         #offset = 96 because the first 6 bytes are metadata, as per GETPKT-INST-001.
         np_file = np.frombuffer(bytes_data, dtype = dt, offset = 96)
         # convert to dataframe
