@@ -33,7 +33,7 @@ def load_multiple_csv_files_vertically(uploaded_csv_files):
         combined_csv_files = pd.concat(uploaded_data_read, axis = 0)
         return combined_csv_files
 
-#@st.cache(allow_output_mutation=True)
+@st.cache(allow_output_mutation=True)
 def load_multiple_bin_files_horizontally(uploaded_bin_files):
     l = []
     for file_bin in uploaded_bin_files:
