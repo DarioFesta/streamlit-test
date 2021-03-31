@@ -342,6 +342,7 @@ if uploaded_file:
                 if "time_option" in globals() and time_option:
                     st.plotly_chart(display_plots_with_time(file, list_of_parameters, column_name_time[0]))
                     check_box_time_plot = st.checkbox("Do you want to plot the time object?")
+                    st.text("You will typically see just a straight line but it can be useful in case of latch-ups")
                     if check_box_time_plot:
                         st.plotly_chart(display_time(file, column_name_time[0]))
                 else:
